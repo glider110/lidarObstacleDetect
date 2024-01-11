@@ -1,4 +1,6 @@
 <launch>
+    <!--  启动Ros包  camera_depth_optical_frame -->   
+    <node name="play_bags" pkg="rosbag" type="play" args="/home/glider/bag/kitti_2011_09_26_drive_0002_synced.bag /kitti/velo/pointcloud:=/velodyne_points -l --rate 0.3" />
     <node pkg="lidar_obstacle_detection" type="lidar_obstacle_detection_node" name="lidar_obstacle_detection_node" output="screen" />
         <rosparam file="$(find lidar_obstacle_detection)/config/lidar_obstacle_detection.yaml" command="load" />
     <!-- Start lidar_obstacle_detection.rviz -->
